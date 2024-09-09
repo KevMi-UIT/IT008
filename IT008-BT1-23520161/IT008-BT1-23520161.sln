@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai_1", "Bai_1\Bai_1.csproj", "{145AE981-F5DD-4166-AEF2-1DF517554B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai_2", "Bai_2\Bai_2.csproj", "{0A9248DC-9B07-4822-8810-FB3752C52E88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai_2-Func", "Bai_2-Func\Bai_2-Func.csproj", "{E97DA36B-ADBC-498D-9A34-898A5D0C1B6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{145AE981-F5DD-4166-AEF2-1DF517554B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145AE981-F5DD-4166-AEF2-1DF517554B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145AE981-F5DD-4166-AEF2-1DF517554B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145AE981-F5DD-4166-AEF2-1DF517554B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9248DC-9B07-4822-8810-FB3752C52E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9248DC-9B07-4822-8810-FB3752C52E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9248DC-9B07-4822-8810-FB3752C52E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9248DC-9B07-4822-8810-FB3752C52E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97DA36B-ADBC-498D-9A34-898A5D0C1B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97DA36B-ADBC-498D-9A34-898A5D0C1B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97DA36B-ADBC-498D-9A34-898A5D0C1B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97DA36B-ADBC-498D-9A34-898A5D0C1B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6236617B-2CA9-4DA4-BB82-64771240BA22}
+	EndGlobalSection
+EndGlobal
