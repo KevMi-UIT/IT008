@@ -12,9 +12,9 @@ public class Person(string _lastName = "", string _firstName = "")
         public Date() { _day = 1; _month = 1; _year = 1; }
         public Date(int init_day, int init_month, int init_year)
         {
-            _day = init_day;
-            _month = init_month;
-            _year = init_year;
+            this._day = init_day;
+            this._month = init_month;
+            this._year = init_year;
         }
         public void PrintDate()
         {
@@ -39,7 +39,7 @@ public class Person(string _lastName = "", string _firstName = "")
 
 public class Program
 {
-    public static void Main()
+    static void Main()
     {
         Person a = new Person("Nguyen Van", "B");
         a.setDateOfBirth(31, 12, 1999);
