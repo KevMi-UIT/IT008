@@ -3,3 +3,4 @@
 Date date = new();
 date.Input();
 date.check();
+
