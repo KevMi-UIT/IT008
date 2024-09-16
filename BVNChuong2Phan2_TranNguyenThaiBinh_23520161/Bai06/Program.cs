@@ -4,36 +4,39 @@ namespace Bai06;
 
 public class Person(string _lastName = "", string _firstName = "")
 {
-    public class Date
+    public class Date(int _day = 1, int _month = 1, int _year = 2000)
     {
-        private int _day;
-        private int _month;
-        private int _year;
-        public Date() { _day = 1; _month = 1; _year = 1; }
-        public Date(int init_day, int init_month, int init_year)
-        {
-            this._day = init_day;
-            this._month = init_month;
-            this._year = init_year;
-        }
+        private int Day { get; set; } = _day;
+        private int Month { get; set; } = _month;
+        private int Year { get; set; } = _year;
+
         public void PrintDate()
         {
-            Console.WriteLine($"{_day}/{_month}/{_year}");
+            Console.WriteLine($"{Day}/{Month}/{Year}");
         }
     }
 
-    public string FirstName { get; set; } = _firstName;
-    public string LastName { get; set; } = _lastName;
-    private Date Date_of_Birth = new Date();
-    public void setDateOfBirth(int day, int month, int year)
+    public string FirstName { get; private set; } = _firstName;
+    public string LastName { get; private set; } = _lastName;
+    private Date? DateOfBirth = null;
+
+    public void SetDateOfBirth(int day, int month, int year)
     {
-        Date_of_Birth = new Date(day, month, year);
+        DateOfBirth = new(day, month, year);
     }
+
     public void Print()
     {
         Console.WriteLine($"Ho va ten: {LastName} {FirstName}");
-        Console.Write("Ngay sinh: ");
-        Date_of_Birth.PrintDate();
+        if (DateOfBirth != null)
+        {
+            Console.Write("Ngay sinh: ");
+            DateOfBirth.PrintDate();
+        }
+        else
+        {
+            Console.WriteLine("Chua co ngay sinh");
+        }
     }
 }
 
@@ -41,8 +44,8 @@ public class Program
 {
     static void Main()
     {
-        Person a = new Person("Nguyen Van", "B");
-        a.setDateOfBirth(31, 12, 1999);
+        Person a = new("Duong Thi Yen", "Nhi");
+        a.SetDateOfBirth(27, 9, 2005);
         a.Print();
     }
 }

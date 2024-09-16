@@ -1,39 +1,40 @@
-﻿// fraction overloading
-
+﻿// Fraction Overloading
 
 namespace Bai07;
 
-public class Fraction
+public class Fraction(int _numerator = 0, int _denominator = 0)
 {
-    private int _numerator;
-    private int _denominator;
-
-    public Fraction(int numerator, int denominator)
+    private int Numerator { get; set; } = _numerator;
+    private int Denominator
     {
-        if (denominator == 0)
+        get => _denominator;
+        set
         {
-            throw new ArgumentException("Mau so phai khac 0.");
+            if (value == 0)
+            {
+                throw new ArgumentException("Mau so phai khac 0.");
+            }
+            _denominator = value;
         }
-        this._numerator = numerator;
-        this._denominator = denominator;
     }
 
     public static Fraction operator +(Fraction a, Fraction b)
     {
-        int newNumerator = a._numerator * b._denominator + b._numerator * a._denominator;
-        int newDenomitor = a._denominator * b._denominator;
+        int newNumerator = a.Numerator * b.Denominator + b.Numerator * a.Denominator;
+        int newDenomitor = a.Denominator * b.Denominator;
         return new Fraction(newNumerator, newDenomitor);
     }
 
     public static Fraction operator *(Fraction a, Fraction b)
     {
-        int newNumerator = a._numerator * b._numerator;
-        int newDenomitor = a._denominator * b._denominator;
+        int newNumerator = a.Numerator * b.Numerator;
+        int newDenomitor = a.Denominator * b.Denominator;
         return new Fraction(newNumerator, newDenomitor);
     }
+
     public static Fraction operator -(Fraction a)
     {
-        return new Fraction(-a._numerator, a._denominator);
+        return new Fraction(-a.Numerator, a.Denominator);
     }
 
     public static Fraction operator -(Fraction a, Fraction b)
@@ -43,48 +44,51 @@ public class Fraction
 
     public static Fraction operator /(Fraction a, Fraction b)
     {
-        if (b._numerator == 0)
+        if (b.Numerator == 0)
         {
             throw new ArgumentException("Mau so phai khac 0.");
         }
-        int newNumerator = a._numerator * b._denominator;
-        int newDenomitor = b._numerator * a._denominator;
+        int newNumerator = a.Numerator * b.Denominator;
+        int newDenomitor = b.Numerator * a.Denominator;
         return new Fraction(newNumerator, newDenomitor);
     }
 
     public Fraction Add(Fraction b)
     {
-        int newNumerator = this._numerator * b._denominator + b._numerator * this._denominator;
-        int newDenomitor = this._denominator * b._denominator;
+        int newNumerator = Numerator * b.Denominator + b.Numerator * Denominator;
+        int newDenomitor = Denominator * b.Denominator;
         return new Fraction(newNumerator, newDenomitor);
 
     }
+
     public Fraction Sub(Fraction b)
     {
-        int newNumerator = this._numerator * b._denominator - b._numerator * this._denominator;
-        int newDenomitor = this._denominator * b._denominator;
+        int newNumerator = Numerator * b.Denominator - b.Numerator * Denominator;
+        int newDenomitor = Denominator * b.Denominator;
         return new Fraction(newNumerator, newDenomitor);
     }
+
     public Fraction Multiply(Fraction b)
     {
-        int newNumerator = this._numerator * b._numerator;
-        int newDenomitor = this._denominator * b._denominator;
+        int newNumerator = Numerator * b.Numerator;
+        int newDenomitor = Denominator * b.Denominator;
         return new Fraction(newNumerator, newDenomitor);
     }
+
     public Fraction Divide(Fraction b)
     {
-        int newNumerator = this._numerator * b._denominator;
-        int newDenomitor = this._denominator * b._numerator;
+        int newNumerator = Numerator * b.Denominator;
+        int newDenomitor = Denominator * b.Numerator;
         return new Fraction(newNumerator, newDenomitor);
     }
 
     public static bool operator ==(Fraction a, Fraction b)
     {
-        return a._numerator * b._denominator == b._numerator * a._denominator;
+        return a.Numerator * b.Denominator == b.Numerator * a.Denominator;
     }
     public bool EqualFraction(Fraction b)
     {
-        return this._numerator * b._denominator == b._numerator * this._denominator;
+        return Numerator * b.Denominator == b.Numerator * Denominator;
     }
 
     public static bool operator !=(Fraction a, Fraction b)
@@ -94,26 +98,26 @@ public class Fraction
 
     public bool NotEqualFraction(Fraction b)
     {
-        return this._numerator * b._denominator != b._numerator * this._denominator;
+        return Numerator * b.Denominator != b.Numerator * Denominator;
     }
 
     public static bool operator >(Fraction a, Fraction b)
     {
-        return a._numerator * b._denominator > b._numerator * a._denominator;
+        return a.Numerator * b.Denominator > b.Numerator * a.Denominator;
     }
     public bool GreaterThan(Fraction b)
     {
-        return this._numerator * b._denominator > b._numerator * this._denominator;
+        return Numerator * b.Denominator > b.Numerator * Denominator;
     }
 
     public static bool operator <(Fraction a, Fraction b)
     {
-        return a._numerator * b._denominator < b._numerator * a._denominator;
+        return a.Numerator * b.Denominator < b.Numerator * a.Denominator;
     }
 
     public bool LessThan(Fraction b)
     {
-        return this._numerator * b._denominator < b._numerator * this._denominator;
+        return Numerator * b.Denominator < b.Numerator * Denominator;
     }
 
     public static bool operator >=(Fraction a, Fraction b)
@@ -123,8 +127,9 @@ public class Fraction
 
     public bool GreaterThanEqual(Fraction b)
     {
-        return this._numerator * b._denominator >= b._numerator * this._denominator;
+        return Numerator * b.Denominator >= b.Numerator * Denominator;
     }
+
     public static bool operator <=(Fraction a, Fraction b)
     {
         return !(a > b);
@@ -132,7 +137,7 @@ public class Fraction
 
     public bool LessThanEqual(Fraction b)
     {
-        return this._numerator * b._denominator <= b._numerator * this._denominator;
+        return Numerator * b.Denominator <= b.Numerator * Denominator;
     }
 
     public override bool Equals(object? obj)
@@ -143,14 +148,16 @@ public class Fraction
         }
         return false;
     }
+
     public override int GetHashCode()
     {
-        return _numerator.GetHashCode() ^ _denominator.GetHashCode();
+        return Numerator.GetHashCode() ^ Denominator.GetHashCode();
 
     }
+
     public override string ToString()
     {
-        return $"{_numerator}/{_denominator}";
+        return $"{Numerator}/{Denominator}";
     }
 }
 
@@ -158,21 +165,13 @@ class Program
 {
     static void Main()
     {
-        Fraction A = new Fraction(3, 4);
-        Fraction B = new Fraction(2, 5);
+        Fraction A = new(4, 3);
+        Fraction B = new(5, 9);
 
-        Fraction sum = A + B;
-        Console.WriteLine($"{A} + {B} = {sum}");
-
-        Fraction diff = A - B;
-        Console.WriteLine($"{A} - {B} = {diff}");
-
-        Fraction product = A * B;
-        Console.WriteLine($"{A} * {B} = {product}");
-
-        Fraction quotient = A / B;
-        Console.WriteLine($"{A} / {B} = {quotient}");
-
+        Console.WriteLine($"{A} + {B} = {A + B}");
+        Console.WriteLine($"{A} - {B} = {A - B}");
+        Console.WriteLine($"{A} * {B} = {A * B}");
+        Console.WriteLine($"{A} / {B} = {A / B}");
         Console.WriteLine($"{A} == {B}: {A == B}");
         Console.WriteLine($"{A} != {B}: {A != B}");
         Console.WriteLine($"{A} > {B}: {A > B}");
@@ -181,19 +180,12 @@ class Program
         Console.WriteLine($"{A} <= {B}: {A <= B}");
 
         // Thực hiện các phương thức Add, Sub, Multiply, Divide tương tự như đã nạp chồng 
-        Fraction addResult = A.Add(B);
-        Console.WriteLine($"{A} Add {B} = {addResult}");
+        Console.WriteLine($"{A} Add {B} = {A.Add(B)}");
+        Console.WriteLine($"{A} Sub {B} = {A.Sub(B)}");
+        Console.WriteLine($"{A} Multiply {B} = {A.Multiply(B)}");
+        Console.WriteLine($"{A} Divide {B} = {A.Divide(B)}");
 
-        Fraction subResult = A.Sub(B);
-        Console.WriteLine($"{A} Sub {B} = {subResult}");
-
-        Fraction multiplyResult = A.Multiply(B);
-        Console.WriteLine($"{A} Multiply {B} = {multiplyResult}");
-
-        Fraction divideResult = A.Divide(B);
-        Console.WriteLine($"{A} Divide {B} = {divideResult}");
-
-        //throw exception với mẫu số = 0
-        Fraction C = new Fraction(3, 0);
+        //throw exception with denominator = 0
+        Fraction C = new(3, 0);
     }
 }
