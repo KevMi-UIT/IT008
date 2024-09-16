@@ -1,6 +1,6 @@
 ﻿// Indexer
 
-namespace Bai03;
+namespace Bai04;
 
 public class Subject(string _name = "", int score = 0)
 {
