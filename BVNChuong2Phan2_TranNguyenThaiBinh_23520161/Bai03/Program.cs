@@ -6,7 +6,7 @@ namespace Bai03;
 public class Employee(string _name = "")
 {
     public string Name { get; set; } = _name;
-    public Employee(Employee prev) : this(prev.Name) { }
+    //  public Employee(Employee prev) : this(prev.Name) { }
 }
 
 public class Company(string _name = "", List<Employee>? _employees = null)
