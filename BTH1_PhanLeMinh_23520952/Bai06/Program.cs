@@ -107,7 +107,7 @@ public class Program
             int res = 0;
             foreach (int num in this)
             {
-                if (!CheckPrime(num))
+                if (CheckPrime(num))
                 {
                     res += num;
                 }
