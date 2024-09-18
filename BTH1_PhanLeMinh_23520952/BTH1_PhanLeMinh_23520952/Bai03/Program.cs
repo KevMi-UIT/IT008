@@ -1,9 +1,10 @@
-﻿public class CDate
+﻿namespace Bai03;
+public class CDate
 {
     public CDate() { }
     private int day; private int month; private int year;
-    private static readonly int[] daysInMonthLeap = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-    private static readonly int[] daysInMonthNoLeap = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    private static readonly int[] DaysInMonthLeap = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    private static readonly int[] DaysInMonthNoLeap = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     public void Input()
     {
         Console.Write("Nhap ngay: ");
@@ -19,8 +20,8 @@
     }
     public bool CheckDay()
     {
-        return (this.day >= 1 && this.day <= daysInMonthNoLeap[this.month]) ||
-    (this.day >= 1 && this.day <= daysInMonthLeap[this.month]);
+        return IsLeapYear(this.year) ? (this.day >= 1 && this.day <= DaysInMonthLeap[this.month]) :
+    (this.day >= 1 && this.day <= DaysInMonthNoLeap[this.month]);
     }
     public bool CheckValid()
     {
