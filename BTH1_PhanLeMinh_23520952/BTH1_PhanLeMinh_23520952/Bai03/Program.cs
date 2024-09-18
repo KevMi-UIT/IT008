@@ -1,0 +1,42 @@
+﻿public class CDate
+{
+    public CDate() { }
+    private int day; private int month; private int year;
+    private static readonly int[] daysInMonthLeap = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    private static readonly int[] daysInMonthNoLeap = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    public void Input()
+    {
+        Console.Write("Nhap ngay: ");
+        this.day = int.Parse(Console.ReadLine() ?? "1");
+        Console.Write("Nhap thang: ");
+        this.month = int.Parse(Console.ReadLine() ?? "1");
+        Console.Write("Nhap nam: ");
+        this.year = int.Parse(Console.ReadLine() ?? "1");
+    }
+    private static bool IsLeapYear(int year)
+    {
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+    }
+    public bool CheckDay()
+    {
+        return (this.day >= 1 && this.day <= daysInMonthNoLeap[this.month]) ||
+    (this.day >= 1 && this.day <= daysInMonthLeap[this.month]);
+    }
+    public bool CheckValid()
+    {
+        if (this.year < 0 || (this.month <= 0 || this.month > 12))
+            return false;
+        return CheckDay();
+    }
+}
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+        CDate day = new CDate();
+        day.Input();
+        if (day.CheckValid()) Console.WriteLine("Ngay thang nam hop le.");
+        else Console.WriteLine("Ngay thang nam khong hop le.");
+    }
+}
