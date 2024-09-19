@@ -6,14 +6,14 @@ namespace Bai08;
 
 public class Person
 {
+    public string firstName;
+    public string lastName;
+
     public Person(string fName, string lName)
     {
         firstName = fName;
         lastName = lName;
     }
-
-    public string firstName;
-    public string lastName;
 }
 
 public class People : IEnumerable
@@ -57,7 +57,7 @@ public class PeopleEnum : IEnumerator
     public bool MoveNext()
     {
         position++;
-        return (position < _people.Length);
+        return position < _people.Length;
     }
 
     public void Reset()
