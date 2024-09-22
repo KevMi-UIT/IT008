@@ -102,7 +102,7 @@ namespace Bai01
             IntergerArray.CreateArray();
             IntergerArray.PrintOddSum();
             Console.WriteLine($"So luong so nguyen to: {IntergerArray.PrimeCounter()}");
-            Console.WriteLine($"So nguyen to nho nhat: {IntergerArray.FindMinimumSquare()}");
+            Console.WriteLine($"So chinh phuong nho nhat: {IntergerArray.FindMinimumSquare()}");
         }
     }
 }
