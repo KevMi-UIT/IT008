@@ -12,16 +12,15 @@ class Program
 
     static void Main()
     {
-        Console.Write("Enter the year? ");
+        Console.Write("Nhap nam: ");
         year = int.Parse(Console.ReadLine() ?? "0");
-        Console.Write("Enter the month (January = 1, etc): ");
+        Console.Write("Nhap thang [1, 12]: ");
         month = int.Parse(Console.ReadLine() ?? "0");
 
         date = new DateTime(year, month, 1);
         DrawHeader();
         FillCalendar();
         DrawCalendar();
-        Console.ReadLine();
     }
 
     static void DrawHeader()
