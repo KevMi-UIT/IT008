@@ -1,8 +1,4 @@
-﻿// Fraction Overloading
-
-using System.Runtime.CompilerServices;
-
-namespace Bai07;
+﻿namespace Bai04;
 
 public class Fraction(int _numerator = 0, int _denominator = 0)
 {
