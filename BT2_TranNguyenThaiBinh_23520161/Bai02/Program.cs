@@ -26,7 +26,7 @@ public class CustomSearcher
             return new List<string>();
         }
     }
-    public void EnumerateFile(string path)
+    public static void EnumerateFile(string path)
     {
         foreach (var dir in GetDirectories(path))
         {
@@ -52,8 +52,6 @@ public class Program
         Console.WriteLine($"\nAll {dir.Count} subdirectories: ");
         Console.WriteLine(string.Join("\n", dir));
         Console.WriteLine("-------------------------------------------");
-
-        CustomSearcher newCustom = new CustomSearcher();
-        newCustom.EnumerateFile(path);
+        CustomSearcher.EnumerateFile(path);
     }
 }
